@@ -1,7 +1,13 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import {
+	FormsModule,
+	ReactiveFormsModule,
+} from '@angular/forms';
+import {
+	HttpClientModule,
+	HTTP_INTERCEPTORS,
+} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
@@ -21,37 +27,37 @@ import { RouterModule } from '@angular/router';
 
 // @ts-ignore
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeaderComponent,
-    ShoppingListComponent,
-    ShoppingEditComponent,
-    DropdownDirective,
-    AuthComponent,
-    LoadingSpinnerComponent,
-    AlertComponent,
-    PlaceholderDirective,
-  ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,
-    AppRoutingModule,
-    RecipesModule,
-    RouterModule,
-  ],
-  providers: [
-    ShoppingListService,
-    RecipeService,
-    {
-      provide: HTTP_INTERCEPTORS,
-      useClass: AuthInterceptorService,
-      multi: true,
-    },
-  ],
-  bootstrap: [AppComponent],
-  // @ts-ignore
-  entryComponents: [AlertComponent],
+	declarations: [
+		AppComponent,
+		HeaderComponent,
+		ShoppingListComponent,
+		ShoppingEditComponent,
+		DropdownDirective,
+		AuthComponent,
+		LoadingSpinnerComponent,
+		AlertComponent,
+		PlaceholderDirective,
+	],
+	imports: [
+		BrowserModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HttpClientModule,
+		AppRoutingModule,
+		RecipesModule,
+		RouterModule,
+	],
+	providers: [
+		ShoppingListService,
+		RecipeService,
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptorService,
+			multi: true,
+		},
+	],
+	bootstrap: [AppComponent],
+	// @ts-ignore
+	entryComponents: [AlertComponent],
 })
 export class AppModule {}
