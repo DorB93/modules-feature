@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpParams } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { map, tap, take, exhaustMap } from 'rxjs/operators';
 
 import { Recipe } from '../recipes/recipe.model';
@@ -21,7 +21,7 @@ export class DataStorageService {
         'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json',
         recipes
       )
-      .subscribe(response => {
+      .subscribe((response) => {
         console.log(response);
       });
   }
@@ -32,15 +32,15 @@ export class DataStorageService {
         'https://ng-course-recipe-book-65f10.firebaseio.com/recipes.json'
       )
       .pipe(
-        map(recipes => {
-          return recipes.map(recipe => {
+        map((recipes) => {
+          return recipes.map((recipe) => {
             return {
               ...recipe,
-              ingredients: recipe.ingredients ? recipe.ingredients : []
+              ingredients: recipe.ingredients ? recipe.ingredients : [],
             };
           });
         }),
-        tap(recipes => {
+        tap((recipes) => {
           this.recipeService.setRecipes(recipes);
         })
       );

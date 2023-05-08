@@ -17,7 +17,7 @@ import { AuthInterceptorService } from './auth/auth-interceptor.service';
 import { AlertComponent } from './shared/alert/alert.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { RecipesModule } from './recipes/recipes.module';
-import {RouterModule} from "@angular/router";
+import { RouterModule } from '@angular/router';
 
 // @ts-ignore
 @NgModule({
@@ -30,7 +30,7 @@ import {RouterModule} from "@angular/router";
     AuthComponent,
     LoadingSpinnerComponent,
     AlertComponent,
-    PlaceholderDirective
+    PlaceholderDirective,
   ],
   imports: [
     BrowserModule,
@@ -39,7 +39,7 @@ import {RouterModule} from "@angular/router";
     HttpClientModule,
     AppRoutingModule,
     RecipesModule,
-    RouterModule
+    RouterModule,
   ],
   providers: [
     ShoppingListService,
@@ -47,13 +47,11 @@ import {RouterModule} from "@angular/router";
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptorService,
-      multi: true
-    }
+      multi: true,
+    },
   ],
   bootstrap: [AppComponent],
   // @ts-ignore
-  entryComponents: [
-    AlertComponent
-  ]
+  entryComponents: [AlertComponent],
 })
 export class AppModule {}
