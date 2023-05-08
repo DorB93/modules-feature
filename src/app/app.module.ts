@@ -24,19 +24,15 @@ import { AlertComponent } from './shared/alert/alert.component';
 import { PlaceholderDirective } from './shared/placeholder/placeholder.directive';
 import { RecipesModule } from './recipes/recipes.module';
 import { RouterModule } from '@angular/router';
+import { ShoppingListModule } from './shopping-list/shopping-list.module';
+import { SharedModule } from './shared/shared.module';
 
 // @ts-ignore
 @NgModule({
 	declarations: [
 		AppComponent,
 		HeaderComponent,
-		ShoppingListComponent,
-		ShoppingEditComponent,
-		DropdownDirective,
 		AuthComponent,
-		LoadingSpinnerComponent,
-		AlertComponent,
-		PlaceholderDirective,
 	],
 	imports: [
 		BrowserModule,
@@ -46,6 +42,8 @@ import { RouterModule } from '@angular/router';
 		AppRoutingModule,
 		RecipesModule,
 		RouterModule,
+    ShoppingListModule,
+    SharedModule
 	],
 	providers: [
 		ShoppingListService,
@@ -57,7 +55,5 @@ import { RouterModule } from '@angular/router';
 		},
 	],
 	bootstrap: [AppComponent],
-	// @ts-ignore
-	entryComponents: [AlertComponent],
 })
 export class AppModule {}
