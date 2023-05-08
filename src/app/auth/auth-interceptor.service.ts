@@ -23,10 +23,9 @@ export class AuthInterceptorService
 					return next.handle(req);
 				}
 				const modifiedReq = req.clone({
-					// @ts-ignore
 					params: new HttpParams().set(
 						'auth',
-						user.token
+						user.token!
 					),
 				});
 				return next.handle(modifiedReq);
